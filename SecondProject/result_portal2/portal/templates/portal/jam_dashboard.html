@@ -1,0 +1,26 @@
+{% extends "portal/base.html" %}
+{% block title %}Jam Dashboard{% endblock %}
+{% block content %}
+<div class="container" style="max-width:400px">
+  <div class="card shadow p-4 mt-4">
+    <h4 class="text-center mb-3">Live Traffic – Jamming</h4>
+    <p class="mb-1"><strong>Users Trying:</strong> <span id="users">{{ users_trying }}</span></p>
+    <p class="mb-1"><strong>Routed to:</strong> <span id="route">{{ routed_to }}</span></p>
+    <div class="progress mb-2" style="height:8px">
+      <div id="bar" class="progress-bar bg-success" style="width: {{ server_load }}%"></div>
+    </div>
+    <p class="mb-0"><strong>Server Load:</strong> <span id="load">{{ server_load }}</span>%</p>
+    <p class="mb-0"><strong>Status:</strong> <span id="status">{{ status }}</span></p>
+  </div>
+</div>
+<script>
+setInterval(()=>fetch("{% url 'portal:jam_dashboard' %}?ajax=1")
+  .then(r=>r.json()).then(d=>{
+    users.textContent = d.users_trying;
+    route.textContent = d.routed_to;
+    load.textContent  = d.server_load;
+    status.textContent= d.status;
+    bar.style.width   = d.server_load+"%";
+} ),3000);
+</script>
+{% endblock %}

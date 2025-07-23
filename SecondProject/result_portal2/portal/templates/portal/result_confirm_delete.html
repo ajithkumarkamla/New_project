@@ -1,0 +1,19 @@
+{% extends "portal/base.html" %}
+{% block title %}Delete Result{% endblock %}
+{% block content %}
+<div class="container" style="max-width:480px;">
+  <div class="alert alert-warning shadow-sm mt-4">
+    <h5 class="alert-heading">Confirm delete</h5>
+    <p>
+      Remove result for
+      <strong>{{ object.student.register_number }}</strong>
+      (SEM {{ object.semester }})?
+    </p>
+    <form method="post">
+      {% csrf_token %}
+      <button class="btn btn-danger">Yes, delete</button>
+      <a href="{% url 'portal:result_list' %}" class="btn btn-secondary ms-2">Cancel</a>
+    </form>
+  </div>
+</div>
+{% endblock %}

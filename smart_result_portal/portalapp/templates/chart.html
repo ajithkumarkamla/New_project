@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Live Traffic Chart</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-light">
+  <div class="container mt-5">
+    <h2 class="text-center text-success">📊 Live Traffic Chart</h2>
+    <canvas id="trafficChart" width="600" height="300"></canvas>
+  </div>
+
+  <script>
+    const ctx = document.getElementById("trafficChart").getContext("2d");
+    const trafficChart = new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: ["T1", "T2", "T3", "T4", "T5"],
+        datasets: [{
+          label: "Users Accessing Portal",
+          data: [4, 6, 8, 5, 9],
+          backgroundColor: "rgba(0, 123, 255, 0.2)",
+          borderColor: "#007bff",
+          borderWidth: 2,
+          tension: 0.4,
+        }],
+      },
+      options: {
+        animation: {
+          duration: 1000,
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            suggestedMax: 15,
+          },
+        },
+      },
+    });
+  </script>
+</body>
+</html>

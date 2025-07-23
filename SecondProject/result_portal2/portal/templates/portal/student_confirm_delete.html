@@ -1,0 +1,15 @@
+{% extends "portal/base.html" %}
+{% block title %}Delete Student{% endblock %}
+{% block content %}
+<div class="container" style="max-width:480px;">
+  <div class="alert alert-warning shadow-sm mt-4">
+    <h5 class="alert-heading">Confirm delete</h5>
+    <p>Are you sure you want to delete <strong>{{ object.register_number }}</strong>?</p>
+    <form method="post">
+      {% csrf_token %}
+      <button class="btn btn-danger">Yes, delete</button>
+      <a href="{% url 'portal:student_list' %}" class="btn btn-secondary ms-2">Cancel</a>
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student List</title>
+</head>
+<body>
+    <h1>Student List</h1>
+
+    <table border="1">
+        <tr>
+            <th>ID</th><th>Name</th><th>Age</th><th>Gender</th><th>DOB</th>
+            <th>Email</th><th>File</th><th>Photo</th><th>Address</th><th>Actions</th>
+        </tr>
+        {% for list in stds %}
+        <tr>
+            <td>{{ list.id }}</td>
+            <td>{{ list.name }}</td>
+            <td>{{ list.age }}</td>
+            <td>{{ list.gender }}</td>
+            <td>{{ list.dob }}</td>
+            <td>{{ list.email }}</td>
+            <td><a href="{{ list.file.url }}">Download</a></td>
+            <td><img src="{{ list.photo.url }}" width="50"></td>
+            <td>{{ list.address }}</td>
+            <td>
+                <a href="{% url 'update_student' list.id %}">Edit</a> |
+                <a href="{% url 'delete_student' list.id %}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <p><a href="{% url 'add_student' %}">Add New Student</a></p>
+</body>
+</html>
