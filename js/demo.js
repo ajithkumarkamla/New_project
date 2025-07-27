@@ -127,3 +127,102 @@
 // console.log(typeof(fees))
 // console.log(typeof(null))
 // console.log(typeof(id))
+
+// let a=10
+// let b=2
+// var addition=a+b
+// var  division=a/b
+// var modelus=a%b
+// var  exa=a**2
+
+// // document.getElementById("result").innerHTML=addition;
+// // document.getElementById("result").innerHTML=division;
+// // console.log(addition)
+// // console.log(addition)
+// // console.log(division)
+// // console.log(modelus)
+// // console.log(exa)
+// console.log(++a)
+// console.log(a++)
+// console.log(a)
+// console.log(--a)
+// console.log(a--)
+// console.log(a)
+
+// let a=10
+// console.log(a)
+// a +=30// a= a+30
+// console.log(a)
+
+// var age=20
+// console.log(age>18);
+// var num1=10
+// var num2="10"
+// console.log(num1>num2)// false
+// console.log(num1>=num2)//false
+// console.log(num1<num2)//true
+// console.log(num1<=num2)//true
+// console.log(num1!=num2)//true
+// console.log(num1==num2)//false
+// console.log(num1===num2)//false
+// console.log(num1!==num2)//true
+
+// let  a=10
+// let b=30
+// var c=40
+// var d=50
+// console.log("and operator:",(a>b)&& (c<d))
+// console.log("or operator:",(a>b)|| (c<d))
+// console.log("not  operator:",!((a>b)|| (c<d)))
+
+// let age=17
+
+// if(age>=18)
+// {
+//     console.log("you are eligible for vote!:",age)
+// }
+// else
+// {
+//      console.log("you are not  eligible for vote!:",age)
+// }
+
+// let num1=10
+// let num2=5
+// let num3=30
+
+// if(num1>=num2)
+// {
+//     if(num1>=num3)
+//     {
+//         console.log("num1 is big")
+//     }
+//     else{
+//         console.log("num3 is big")
+//     }
+// }
+// // else if(num1>=num3)
+// // {
+// //     console.log("num1 is big")
+// // }
+// else if(num2>=num3)
+// {
+//     console.log("num2 is big")
+// }
+// else{
+//     console.log("num3 is big")
+// }
+
+// console.log(1)
+// console.log(2)
+// console.log(3)
+// console.log(4)
+// console.log(5)
+
+for( i=1; i<=25; i++)
+{
+    // console.log("karthika")
+    if(i%2==0){
+        console.log(i)
+    }
+
+}
