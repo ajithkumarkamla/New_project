@@ -92,18 +92,19 @@
 # for i in list_add:
 #     if(i=="sivankari"):
 #         print(i)
-course=["java","html","css","python","python"]
-# course_len=len(course)
-# for i in range(course_len):
-#     if(i%2!=0):
-#         print(course[i])
-course.remove("html")
-print(course)
-course.append("sivarajini")
-print(course)
-course.insert(0,"karthika")
-print(course)
-course.reverse()
-print("reverse in list:",course)
-course.sort()
-print(course)
+# course=["java","html","css","python","python"]
+# # course_len=len(course)
+# # for i in range(course_len):
+# #     if(i%2!=0):
+# #         print(course[i])
+# course.remove("html")
+# print(course)
+# course.append("sivarajini")
+# print(course)
+# course.insert(0,"karthika")
+# print(course)
+# course.reverse()
+# print("reverse in list:",course)
+# course.sort()
+# print(course)
+
