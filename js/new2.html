@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Manipulation Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #container {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn {
+            margin: 5px;
+            padding: 5px 10px;
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #005f73;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <h2>DOM Manipulation Examples</h2>
+
+    <!-- Buttons to trigger each method -->
+    <button class="btn" onclick="createElementExample()">createElement()</button>
+    <button class="btn" onclick="appendChildExample()">appendChild()</button>
+    <button class="btn" onclick="textContentExample()">textContent</button>
+    <button class="btn" onclick="innerHTMLExample()">innerHTML</button>
+    <button class="btn" onclick="afterExample()">after()</button>
+    <button class="btn" onclick="appendExample()">append()</button>
+    <button class="btn" onclick="prependExample()">prepend()</button>
+    <button class="btn" onclick="insertAdjacentHTMLExample()">insertAdjacentHTML()</button>
+    <button class="btn" onclick="replaceChildExample()">replaceChild()</button>
+    <button class="btn" onclick="cloneNodeExample()">cloneNode()</button>
+    <button class="btn" onclick="removeChildExample()">removeChild()</button>
+    <button class="btn" onclick="insertBeforeExample()">insertBefore()</button>
+
+    <!-- Output area -->
+    <div id="output" style="margin-top: 20px;"></div>
+</div>
+
+<script>
+    const output = document.getElementById("output");
+
+    // 1. createElement()
+    function createElementExample() {
+        const newPara = document.createElement("li");
+        console.log(newPara)
+        newPara.textContent = "New Paragraph created!";
+        output.appendChild(newPara);
+    }
+
+    // 2. appendChild()
+    function appendChildExample() {
+        const item = document.createElement("li");
+        item.textContent = "Appended Item";
+        output.appendChild(item);
+    }
+
+    // 3. textContent
+    function textContentExample() {
+        output.textContent = "Text has been updated using textContent!";
+    }
+
+    // 4. innerHTML
+    function innerHTMLExample() {
+        output.innerHTML = "<p style='color: green;'>HTML content added using innerHTML!</p>";
+    }
+
+    // 5. after()
+    function afterExample() {
+        const newPara = document.createElement("p");
+        newPara.textContent = "Paragraph inserted after!";
+        output.after(newPara);
+    }
+
+    // 6. append()
+    function appendExample() {
+        const span = document.createElement("span");
+        span.textContent = "Appended text using append()! ";
+        output.append(span);
+    }
+
+    // 7. prepend()
+    function prependExample() {
+        const span = document.createElement("span");
+        span.textContent = "Prepended text using prepend()! ";
+        output.prepend(span);
+    }
+
+    // 8. insertAdjacentHTML()
+    function insertAdjacentHTMLExample() {
+        output.insertAdjacentHTML("beforeend", "<p style='color: blue;'>Inserted HTML using insertAdjacentHTML!</p>");
+    }
+
+    // 9. replaceChild()
+    function replaceChildExample() {
+        const newPara = document.createElement("p");
+        newPara.textContent = "Replaced Content!";
+        if (output.firstChild) {
+            output.replaceChild(newPara, output.firstChild);
+        } else {
+            output.appendChild(newPara);
+        }
+    }
+
+    // 10. cloneNode()
+    function cloneNodeExample() {
+        const cloned = output.cloneNode(true);
+        cloned.id = "clonedOutput";
+        document.body.appendChild(cloned);
+    }
+
+    // 11. removeChild()
+    function removeChildExample() {
+        if (output.firstChild) {
+            output.removeChild(output.firstChild);
+        } else {
+            alert("No child element to remove!");
+        }
+    }
+
+    // 12. insertBefore()
+    function insertBeforeExample() {
+        const newPara = document.createElement("p");
+        newPara.textContent = "Inserted Before!";
+        if (output.firstChild) {
+            output.insertBefore(newPara, output.firstChild);
+        } else {
+            output.appendChild(newPara);
+        }
+    }
+</script>
+
+</body>
+</html>
